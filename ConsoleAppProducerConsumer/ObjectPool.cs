@@ -38,13 +38,6 @@ namespace ConsoleAppProducerConsumer
                 if (_objects.Count < _maxElements)
                 {
                     _objects.Push(item);
-#if DEBUG
-      if (_objects.Count % 200 == 0)
-                    {
-                        Console.WriteLine(_objects.Count);
-                    }               
-#endif
-
                 }
             }
         }

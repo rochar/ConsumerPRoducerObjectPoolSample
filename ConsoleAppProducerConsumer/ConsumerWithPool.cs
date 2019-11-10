@@ -21,18 +21,10 @@ namespace ConsoleAppProducerConsumer
 
             public async Task ConsumeData()
             {
-                int i = 0;
                 while (await _reader.WaitToReadAsync().ConfigureAwait(false))
                 {
                     if (_reader.TryRead(out var data))
                     {
-                        i++;
-#if DEBUG
-                        if (i % 1000 == 0)
-                        {
-                            Console.WriteLine("Consumer " + i);
-                        }
-#endif
                         _processResult(data);
                         _objectPool.Return(data);
                     }

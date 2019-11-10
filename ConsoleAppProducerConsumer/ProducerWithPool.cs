@@ -28,13 +28,6 @@ namespace ConsoleAppProducerConsumer
                 for (var i = 0; i < _objectsToProduce; i++)
                 {
 
-#if DEBUG
-                    if (i % 1000 == 0)
-                    {
-                        Console.WriteLine("Producer " + i);
-                    }
-#endif
-
                     //assume that this were retrieve from another component / system                     
                     var externalDto = _simulateProducerWork(i);
 
